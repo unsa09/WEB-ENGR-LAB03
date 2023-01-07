@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Profile</title>
+</head>
+<body>
+  <h1>Student Profile</h1>
+  <p>
+    This is a student profile page.
+    <img src="student.jpg" alt="Student" />
+  </p>
+  <table>
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th>Credit Hours</th>
+      <th>Year Taken</th>
+    </tr>
+    <tr>
+      <td>CSC-101</td>
+      <td>Introduction to Computer Science</td>
+      <td>3</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <td>MATH-200</td>
+      <td>Calculus I</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <td>ENG-105</td>
+      <td>Technical Writing</td>
+      <td>3</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <td>PHYS-250</td>
+      <td>General Physics I</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+  </table>
+  <div>
+    <button onclick="searchCourse()">Search Course</button>
+    <button onclick="addCourse()">Add Course</button>
+    <button onclick="updateCourse()">Update Course</button>
+    <button onclick="removeCourse()">Remove Course</button>
+  </div>
+  <h2>Interests</h2>
+  <p>
+    My interests include:
+    <a href="https://www.ssuet.edu.pk/">SSUET University</a>
+  </p>
+</body>
+</html>
+You can then add the JavaScript functions for each button using the onclick attribute, like this:
 
+Copy code
+function searchCourse() {
+  let courseId = window.prompt('Enter course ID');
+  let courses = document.querySelectorAll('td:first-child');
+  for (let i = 0; i < courses.length; i++) {
+    if (courses[i].textContent === courseId) {
+      courses[i].parentElement.style.backgroundColor = 'yellow';
+      break;
+    }
+  }
+}
+
+function addCourse() {
+  // code to add a new course
+}
+
+function updateCourse() {
+  // code to update a course
+}
+
+function removeCourse() {
+  // code to remove a course
+}
