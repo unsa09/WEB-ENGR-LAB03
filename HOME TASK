@@ -1,1 +1,25 @@
+<a href="https://www.ssuet.edu.pk/">SSUET University</a>
+<a href="https://www.ssuet.edu.pk/students/scholarship-notice">Scholarship Notice</a>
+<a href="https://www.ssuet.edu.pk/news-and-events/events-calendar">Events Calendar</a>
+To redirect to the Student Profile page after login, you can use the window.alert and window.open functions in JavaScript. For example:
 
+Copy code
+let loginButton = document.querySelector('input[type="submit"]');
+loginButton.addEventListener('click', function() {
+  window.alert('Logged in successfully');
+  window.open('student-profile.html?studentId=12345', '_blank');
+});
+To send the query params (Student Id) from the login page to the Student Profile page, you can add it to the URL as a query parameter. For example:
+
+Copy code
+window.open('student-profile.html?studentId=12345', '_blank');
+To check if the query param (Student Id) is present or not on the Student Profile page, you can use the URLSearchParams object. For example:
+
+Copy code
+let urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('studentId')) {
+  let studentId = urlParams.get('studentId');
+  // studentId is present, do something with it
+} else {
+  // studentId is not present
+}
